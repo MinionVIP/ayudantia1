@@ -8,6 +8,8 @@ const db = mysql.createPool({
   database: process.env.DB_NAME,
   charset: 'utf8mb4',
 });
+  
+
 
 const PORT = 3000;
 
@@ -54,5 +56,5 @@ http.createServer(async (req, res) => {
     res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end(`Error al consultar la base de datos: ${err.message}\n`);
   }
-  
+
 }).listen(PORT, () => console.log(`App escuchando en puerto ${PORT}`));
